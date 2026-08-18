@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab and Go - Menu & Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-image-container">
+                    <img src="logo 1.jpeg" alt="Grab and Go Logo" class="site-logo">
+                </div>
+                <div class="logo-text-container">
+                    <div class="logo-text">Grab and Go</div>
+                    <div class="logo-tagline">Order, relax and enjoy</div>
+                </div>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">
+                        <span class="nav-number">01</span>
+                        <span class="nav-text">About & Scope</span>
+                    </a></li>
+                    <li><a href="menu.html" class="nav-link active">
+                        <span class="nav-number">02</span>
+                        <span class="nav-text">Menu & Cart</span>
+                    </a></li>
+                    <li><a href="policies.html" class="nav-link">
+                        <span class="nav-number">03</span>
+                        <span class="nav-text">Policies & Info</span>
+                    </a></li>
+                    <li><a href="feedback.html" class="nav-link">
+                        <span class="nav-number">04</span>
+                        <span class="nav-text">Feedback</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="page-section">
+            <div class="page-intro" style="margin-top: 2rem;">
+                <div class="section-header">
+                    <span class="section-label">Delicious Offerings</span>
+                    <h2 class="section-title">Our Menu</h2>
+                    <p class="section-description">Fresh, quality food prepared with care for our university community</p>
+                </div>
+            </div>
+
+            <section id="menu" class="content-section">
+                <!-- Pastry Items -->
+                <div class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">🥐</div>
+                        <h3 class="category-title">Pastry Items</h3>
+                    </div>
+                    
+                    <div class="menu-grid">
+                        <div class="food-card" data-category="pastry">
+                            <div class="food-image">
+                                <img src=" sas bun.jpg " alt="Sausage Bun">
+                                <div class="food-badge">Popular</div>
+                            </div>
+                            <div class="food-content">
+                                <h4 class="food-name">Sausage Bun</h4>
+                                <p class="food-price">Rs. 80</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Sausage Bun', 80, this)">
+                                    <span>Add to Cart</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-category="pastry">
+                            <div class="food-image"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop" alt="Samosa"></div>
+                            <div class="food-content">
+                                <h4 class="food-name">Samosa</h4>
+                                <p class="food-price">Rs. 60</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Samosa', 60, this)">
+                                    <span>Add to Cart</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-category="pastry">
+                            <div class="food-image"><img src="rools.jpg" alt="Rolls"></div>
+                            <div class="food-content">
+                                <h4 class="food-name">Rolls</h4>
+                                <p class="food-price">Rs. 60</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Rolls', 60, this)">
+                                    <span>Add to Cart</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-category="pastry">
+                            <div class="food-image"><img src="cream bun.jpg" alt="Cream Bun"></div>
+                            <div class="food-content">
+                                <h4 class="food-name">Cream Bun</h4>
+                                <p class="food-price">Rs. 50</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Cream Bun', 50, this)">
+                                    <span>Add to Cart</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-category="pastry">
+                            <div class="food-image"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop" alt="Donuts"><div class="food-badge">Sweet</div></div>
+                            <div class="food-content">
+                                <h4 class="food-name">Donuts</h4>
+                                <p class="food-price">Rs. 80</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Donuts', 80, this)">
+                                    <span>Add to Cart</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="food-card" data-category="pastry">
+                            <div class="food-image"><img src="Eclairs.jpg" alt="Eclairs"></div>
+                            <div class="food-content">
+                                <h4 class="food-name">Eclairs</h4>
+                                <p class="food-price">Rs. 70</p>
+                                <button class="add-to-cart-btn" onclick="addToCart('Eclairs', 70, this)">
+                                    <span>Add to Cart</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Meals -->
+                <div class="menu-category">
+                    <div class="category-header">
+                        <div class="category-icon">🍛</div>
+                        <h3 class="category-title">Main Meals</h3>
+                    </div>
+                    
+                    <div class="meal-time-selector card premium-card">
+                        <div class="meal-selector-content">
+                            <label for="meal-time" class="meal-label">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                <span>Select Meal Time:</span>
+                            </label>
+                            <select id="meal-time" class="meal-select">
+                                <option value="Breakfast">🌅 Breakfast (6:00-7:00 AM)</option>
+                                <option value="Lunch">🌞 Lunch (11:30 AM-12:30 PM)</option>
+                                <option value="Dinner">🌙 Dinner (5:00-6:00 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="portions-grid">
+                        <!-- Half Portion -->
+                        <div class="portion-card" id="half-portion">
+                            <div class="portion-header">
+                                <div class="portion-icon">🍽️</div>
+                                <h4 class="portion-title">Half Portion</h4>
+                                <p class="portion-subtitle">Perfect for light meals</p>
+                            </div>
+                            <div class="portion-items">
+                                <label class="checkbox-item"><input type="checkbox" value="Vegetables rice and curry" data-price="160"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Veg rice & curry</span><span class="item-price">Rs. 160</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Egg rice and curry" data-price="220"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Egg rice & curry</span><span class="item-price">Rs. 220</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Sausages rice and curry" data-price="210"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Sausages rice & curry</span><span class="item-price">Rs. 210</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Dry fish rice and curry" data-price="240"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Dry fish rice & curry</span><span class="item-price">Rs. 240</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Sprat rice and curry" data-price="240"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Sprat rice & curry</span><span class="item-price">Rs. 240</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Salmon rice and curry" data-price="260"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Salmon rice & curry</span><span class="item-price">Rs. 260</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Chicken rice and curry" data-price="320"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Chicken rice & curry</span><span class="item-price">Rs. 320</span></span></label>
+                            </div>
+                            <button class="portion-add-btn" onclick="addCheckedItems('half-portion', 'Half Portion', this)">
+                                <span>Add Selected Items</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Full Portion -->
+                        <div class="portion-card" id="full-portion">
+                            <div class="portion-header">
+                                <div class="portion-icon">🍛</div>
+                                <h4 class="portion-title">Full Portion</h4>
+                                <p class="portion-subtitle">Satisfying and filling</p>
+                            </div>
+                            <div class="portion-items">
+                                <label class="checkbox-item"><input type="checkbox" value="Vegetables rice and curry" data-price="180"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Veg rice & curry</span><span class="item-price">Rs. 180</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Egg rice and curry" data-price="240"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Egg rice & curry</span><span class="item-price">Rs. 240</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Sausages rice and curry" data-price="230"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Sausages rice & curry</span><span class="item-price">Rs. 230</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Dry fish rice and curry" data-price="260"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Dry fish rice & curry</span><span class="item-price">Rs. 260</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Sprat rice and curry" data-price="280"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Sprat rice & curry</span><span class="item-price">Rs. 280</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Salmon rice and curry" data-price="280"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Salmon rice & curry</span><span class="item-price">Rs. 280</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Chicken rice and curry" data-price="340"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Chicken rice & curry</span><span class="item-price">Rs. 340</span></span></label>
+                            </div>
+                            <button class="portion-add-btn" onclick="addCheckedItems('full-portion', 'Full Portion', this)">
+                                <span>Add Selected Items</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Normal Portion -->
+                        <div class="portion-card" id="normal-portion">
+                            <div class="portion-header">
+                                <div class="portion-icon">🍜</div>
+                                <h4 class="portion-title">Normal Portion</h4>
+                                <p class="portion-subtitle">Standard serving size</p>
+                            </div>
+                            <div class="portion-items">
+                                <label class="checkbox-item"><input type="checkbox" value="Vegetables rice and curry" data-price="200"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Veg rice & curry</span><span class="item-price">Rs. 200</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Egg rice and curry" data-price="260"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Egg rice & curry</span><span class="item-price">Rs. 260</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Sausages rice and curry" data-price="250"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Sausages rice & curry</span><span class="item-price">Rs. 250</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Dry fish rice and curry" data-price="280"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Dry fish rice & curry</span><span class="item-price">Rs. 280</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Sprat rice and curry" data-price="300"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Sprat rice & curry</span><span class="item-price">Rs. 300</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Salmon rice and curry" data-price="280"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Salmon rice & curry</span><span class="item-price">Rs. 280</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Chicken rice and curry" data-price="360"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Chicken rice & curry</span><span class="item-price">Rs. 360</span></span></label>
+                            </div>
+                            <button class="portion-add-btn" onclick="addCheckedItems('normal-portion', 'Normal Portion', this)">
+                                <span>Add Selected Items</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Today Special -->
+                        <div class="portion-card special-card" id="today-special">
+                            <div class="portion-header">
+                                <div class="portion-icon">⭐</div>
+                                <h4 class="portion-title">Today Special</h4>
+                                <p class="portion-subtitle">Chef's recommendations</p>
+                            </div>
+                            <div class="portion-items">
+                                <label class="checkbox-item"><input type="checkbox" value="Milk rice" data-price="160"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Milk rice</span><span class="item-price">Rs. 160</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Bread" data-price="160"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Bread</span><span class="item-price">Rs. 160</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Noodles" data-price="180"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Noodles</span><span class="item-price">Rs. 180</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Pasta" data-price="200"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Pasta</span><span class="item-price">Rs. 200</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Kottu" data-price="300"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Kottu</span><span class="item-price">Rs. 300</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Rice" data-price="280"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Rice</span><span class="item-price">Rs. 280</span></span></label>
+                                <label class="checkbox-item"><input type="checkbox" value="Biriyani" data-price="580"><span class="checkbox-custom"></span><span class="item-details"><span class="item-name">Biriyani</span><span class="item-price">Rs. 580</span></span></label>
+                            </div>
+                            <button class="portion-add-btn" onclick="addCheckedItems('today-special', 'Today Special', this)">
+                                <span>Add Selected Items</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="payments" class="content-section">
+                <div class="section-header">
+                    <span class="section-label">Payment Options</span>
+                    <h2 class="section-title">Payment Methods</h2>
+                </div>
+                
+                <div class="card premium-card">
+                    <div class="card-content">
+                        <p class="instruction">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align: middle; margin-right: 8px;">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Select your preferred payment method below. Online payments will be available soon!
+                        </p>
+                        <div class="payment-methods">
+                            <div class="payment-card active">
+                                <div class="payment-icon">💵</div>
+                                <h4>Cash on Delivery</h4>
+                                <p>Pay with cash when your food arrives</p>
+                                <div class="payment-status">Available Now</div>
+                            </div>
+                            <div class="payment-card disabled">
+                                <span class="coming-soon-badge">Coming Soon</span>
+                                <div class="payment-icon">💳</div>
+                                <h4>Credit / Debit Cards</h4>
+                                <p>Visa / Mastercard</p>
+                            </div>
+                            <div class="payment-card disabled">
+                                <span class="coming-soon-badge">Coming Soon</span>
+                                <div class="payment-icon">👛</div>
+                                <h4>University E-Wallet</h4>
+                                <p>Student App Integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cart" class="cart-section">
+                <div class="section-header">
+                    <span class="section-label">Review Your Order</span>
+                    <h2 class="section-title">Your Cart & Checkout</h2>
+                </div>
+                
+                <div class="checkout-container">
+                    <div class="customer-form-card card premium-card">
+                        <div class="form-header">
+                            <div class="form-icon">📋</div>
+                            <h3>Delivery Details</h3>
+                            <p>Please provide your information for delivery</p>
+                        </div>
+                        <div class="form-content">
+                            <div class="form-group">
+                                <label for="cus-name">Full Name</label>
+                                <input type="text" id="cus-name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cus-index">University Index Number</label>
+                                <input type="text" id="cus-index" placeholder="e.g., 2021/CS/123" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cus-phone">Phone Number</label>
+                                <input type="tel" id="cus-phone" placeholder="+94 XX XXX XXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cus-hostel">Select Your Hostel</label>
+                                <select id="cus-hostel" required>
+                                    <option value="" disabled selected>Choose your hostel</option>
+                                    <option value="Charli">Charlie</option>
+                                    <option value="Ecco">Echo</option>
+                                    <option value="Foxtrot">Foxtrot</option>
+                                    <option value="Bravo">Bravo</option>
+                                    <option value="Delta">Delta</option>
+                                    <option value="Alpha">Alpha</option>
+                                    <option value="Luxery">Luxury</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-summary-card card premium-card">
+                        <div class="cart-header">
+                            <div class="cart-icon">🛒</div>
+                            <h3>Order Summary</h3>
+                            <span class="cart-count" id="cart-count">0 items</span>
+                        </div>
+                        
+                        <div class="cart-items-container">
+                            <ul id="cart-items" class="cart-items-list"></ul>
+                            <div class="empty-cart" id="empty-cart">
+                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 2L7.17 4H2v2h1.5l1.5 13c.1 1.1 1 2 2.1 2h9.8c1.1 0 2-.9 2.1-2l1.5-13H22V4h-5.17L15 2H9zm0 2h6l1 2H8l1-2zM8.5 9c.28 0 .5.22.5.5v8c0 .28-.22.5-.5.5s-.5-.22-.5-.5v-8c0-.28.22-.5.5-.5zm3.5 0c.28 0 .5.22.5.5v8c0 .28-.22.5-.5.5s-.5-.22-.5-.5v-8c0-.28.22-.5.5-.5zm3.5 0c.28 0 .5.22.5.5v8c0 .28-.22.5-.5.5s-.5-.22-.5-.5v-8c0-.28.22-.5.5-.5z" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                                <p>Your cart is empty</p>
+                                <small>Add items from the menu to get started</small>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-footer">
+                            <div class="total-row">
+                                <span class="total-label">Total Amount</span>
+                                <span class="total-amount">Rs. <span id="total-price">0</span></span>
+                            </div>
+                            <button class="checkout-btn" onclick="checkoutAndPrintPDF()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21 12V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>Confirm Order & Download Receipt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <div class="toast-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

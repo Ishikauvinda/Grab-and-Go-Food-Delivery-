@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab and Go - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-image-container">
+                    <img src="logo 1.jpeg" alt="Grab and Go Logo" class="site-logo">
+                </div>
+                <div class="logo-text-container">
+                    <div class="logo-text">Grab and Go</div>
+                    <div class="logo-tagline">Order, relax and enjoy</div>
+                </div>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">
+                        <span class="nav-number">01</span>
+                        <span class="nav-text">About & Scope</span>
+                    </a></li>
+                    <li><a href="menu.html" class="nav-link">
+                        <span class="nav-number">02</span>
+                        <span class="nav-text">Menu & Cart</span>
+                    </a></li>
+                    <li><a href="policies.html" class="nav-link">
+                        <span class="nav-number">03</span>
+                        <span class="nav-text">Policies & Info</span>
+                    </a></li>
+                    <li><a href="feedback.html" class="nav-link active">
+                        <span class="nav-number">04</span>
+                        <span class="nav-text">Feedback</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="page-section">
+            <div class="page-intro" style="margin-top: 2rem;">
+                <div class="section-header">
+                    <span class="section-label">We Value Your Opinion</span>
+                    <h2 class="section-title">Feedback & Complaints</h2>
+                    <p class="section-description">Help us improve our service by sharing your experience</p>
+                </div>
+            </div>
+
+            <section id="feedback" class="content-section">
+                <div class="feedback-container">
+                    <div class="feedback-info card premium-card">
+                        <div class="info-icon">💬</div>
+                        <h3>Why Your Feedback Matters</h3>
+                        <p>Your feedback helps us maintain our quality standards and initiates corrective actions if necessary.</p>
+                        <ul class="feedback-benefits">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Improve food quality</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Enhance delivery service</span>
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Better customer experience</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="feedback-form-card card premium-card">
+                        <div class="form-header">
+                            <div class="form-icon">📝</div>
+                            <h3>Share Your Experience</h3>
+                        </div>
+                        
+                        <div class="form-content">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fb-date">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        Date
+                                    </label>
+                                    <input type="date" id="fb-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fb-time">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        Time
+                                    </label>
+                                    <input type="time" id="fb-time" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fb-meal">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+                                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                    </svg>
+                                    Meal Name
+                                </label>
+                                <input type="text" id="fb-meal" placeholder="e.g. Chicken Rice and Curry" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fb-rating">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                                    </svg>
+                                    Rating (1 to 5)
+                                </label>
+                                <div class="rating-input-container">
+                                    <input type="number" id="fb-rating" min="1" max="5" placeholder="5" required>
+                                    <div class="rating-stars" id="rating-stars">
+                                        <span class="star" data-rating="1">★</span>
+                                        <span class="star" data-rating="2">★</span>
+                                        <span class="star" data-rating="3">★</span>
+                                        <span class="star" data-rating="4">★</span>
+                                        <span class="star" data-rating="5">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fb-comment">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Comments
+                                </label>
+                                <textarea id="fb-comment" rows="5" placeholder="Share your experience with us..."></textarea>
+                            </div>
+                            
+                            <button class="submit-feedback-btn" onclick="submitFeedback()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Submit Feedback</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <div class="toast-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

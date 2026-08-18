@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab and Go - About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <div class="logo-image-container">
+                    <img src="logo 1.jpeg" alt="Grab and Go Logo" class="site-logo">
+                </div>
+                <div class="logo-text-container">
+                    <div class="logo-text">Grab and Go</div>
+                    <div class="logo-tagline">Order, relax and enjoy</div>
+                </div>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">
+                        <span class="nav-number">01</span>
+                        <span class="nav-text">About & Scope</span>
+                    </a></li>
+                    <li><a href="menu.html" class="nav-link">
+                        <span class="nav-number">02</span>
+                        <span class="nav-text">Menu & Cart</span>
+                    </a></li>
+                    <li><a href="policies.html" class="nav-link">
+                        <span class="nav-number">03</span>
+                        <span class="nav-text">Policies & Info</span>
+                    </a></li>
+                    <li><a href="feedback.html" class="nav-link">
+                        <span class="nav-number">04</span>
+                        <span class="nav-text">Feedback</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="page-section">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-title-line">Welcome to</span>
+                        <span class="hero-title-main">Grab and Go</span>
+                    </h1>
+                    <p class="hero-subtitle">Your Premium University Food Delivery Experience</p>
+                    <div class="hero-cta">
+                        <button class="cta-button primary" onclick="window.location.href='menu.html'">
+                            <span>Explore Menu</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="cta-button secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                            <span>Learn More</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="content-section">
+                <div class="section-header">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-title">About Our Company</h2>
+                </div>
+                
+                <div class="card premium-card">
+                    <div class="card-content">
+                        <p class="lead-text"><strong>"Grab and Go"</strong> <span class="slogan-badge">Order, relax and enjoy</span> is a university food delivery service created to make ordering food from the university canteen easier, faster, and more convenient for students.</p>
+                        <p>Our platform allows customers to view the menu, place orders, track their orders, and share feedback or complaints through one simple system.</p>
+                        <p>We focus on quality food, accurate orders, timely delivery, customer satisfaction, and continuous improvement.</p>
+                        
+                        <div class="vision-mission-grid">
+                            <div class="vm-card vision-card">
+                                <div class="vm-icon">👁️</div>
+                                <h3>Our Vision</h3>
+                                <p>To become the most trusted and efficient campus food delivery service by providing quality food and an excellent customer experience.</p>
+                            </div>
+                            
+                            <div class="vm-card mission-card">
+                                <div class="vm-icon">🎯</div>
+                                <h3>Our Mission</h3>
+                                <p>To provide safe, quality and accurately prepared food to students on time through an efficient digital ordering and delivery system, while continuously improving our service based on customer feedback.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scope" class="content-section">
+                <div class="section-header">
+                    <span class="section-label">Our Coverage</span>
+                    <h2 class="section-title">Scope</h2>
+                </div>
+                
+                <div class="card premium-card scope-card">
+                    <div class="card-content">
+                        <div class="quote-mark">"</div>
+                        <p class="scope-text">The Quality Management System covers the processes involved in receiving digital food orders from university students, coordinating food preparation, conducting quality checks, managing customer communication and feedback, and delivering food orders within the university campus premises.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="conditions" class="content-section">
+                <div class="section-header">
+                    <span class="section-label">Important Information</span>
+                    <h2 class="section-title">Conditions</h2>
+                </div>
+                
+                <div class="card premium-card">
+                    <div class="card-content">
+                        <div class="conditions-list">
+                            <div class="condition-item">
+                                <div class="condition-icon">⏰</div>
+                                <div class="condition-content">
+                                    <h4>Meal Times</h4>
+                                    <p>Orders should be placed within the specified meal times: <strong>Breakfast 6:00–7:00 AM, Lunch 11:30 AM–12:30 PM, and Dinner 5:00–6:00 PM</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="condition-item">
+                                <div class="condition-icon">✏️</div>
+                                <div class="condition-content">
+                                    <h4>Order Changes</h4>
+                                    <p>Customers can request changes to their order <strong>within 15 minutes of placing the order</strong>. After 15 minutes, changes may not be possible as the order may already be under preparation.</p>
+                                </div>
+                            </div>
+                            <div class="condition-item">
+                                <div class="condition-icon">✅</div>
+                                <div class="condition-content">
+                                    <h4>Order Accuracy</h4>
+                                    <p>Customers should carefully check their <strong>food items, quantities, and order details</strong> before confirming the order.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="how-to-order" class="content-section">
+                <div class="section-header">
+                    <span class="section-label">Getting Started</span>
+                    <h2 class="section-title">How to Order</h2>
+                </div>
+                
+                <div class="card premium-card">
+                    <div class="card-content">
+                        <div class="steps-container">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Browse Menu</h4>
+                                    <p>Go to the <strong>Menu & Cart</strong> page and explore our delicious offerings.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Select Items</h4>
+                                    <p>Select Meal time and choose your items using the checkboxes.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Fill Details</h4>
+                                    <p>Fill in your Delivery Details (Name, Index, Phone, Hostel).</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Confirm Order</h4>
+                                    <p>Review your cart and click <strong>Confirm Order & Download Receipt</strong> to generate your PDF.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
