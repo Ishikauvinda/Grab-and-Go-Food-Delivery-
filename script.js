@@ -41,15 +41,14 @@ function initializeAnimations() {
         gsap.from('.hero-cta', { opacity: 0, y: 30, duration: 0.8, delay: 0.9, ease: 'power3.out' });
     }
     
-    // Bug Fix: Card animations will trigger correctly now
     gsap.utils.toArray('.card').forEach((card, index) => {
         gsap.from(card, {
             scrollTrigger: { 
                 trigger: card, 
                 start: 'top 98%', 
-                toggleActions: 'play none none none' // Play once to avoid hiding items
+                toggleActions: 'play none none none'
             },
-            clearProps: "all", // Remove inline CSS after animation to prevent layout bugs
+            clearProps: "all",
             opacity: 0, 
             y: 30, 
             duration: 0.6, 
@@ -85,7 +84,6 @@ function initializeScrollAnimations() {
         });
     }
     
-    // Bug Fix: "How to Order" steps will no longer be blank
     if(document.querySelector('.step-item')) {
         gsap.from('.step-item', {
             scrollTrigger: { trigger: '.steps-container', start: 'top 98%', toggleActions: 'play none none none' },
@@ -94,7 +92,6 @@ function initializeScrollAnimations() {
         });
     }
 
-    // Refresh ScrollTrigger to recalculate page height
     setTimeout(() => {
         ScrollTrigger.refresh();
     }, 500);
@@ -237,7 +234,7 @@ function updateCartUI() {
     if (cartCount) cartCount.textContent = `${cart.length} item${cart.length !== 1 ? 's' : ''}`;
 }
 
-// ============ CHECKOUT & PDF GENERATION ============
+// ============ CHECKOUT, PDF & WHATSAPP INTEGRATION ============
 function checkoutAndPrintPDF() {
     if (cart.length === 0) {
         showToast("Your cart is empty. Please add items first.", "warning");
@@ -254,6 +251,7 @@ function checkoutAndPrintPDF() {
         return;
     }
 
+    // 1. PDF Generation
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     const date = new Date().toLocaleDateString();
@@ -292,9 +290,33 @@ function checkoutAndPrintPDF() {
     doc.text(`Total Amount: Rs. ${total}`, 140, yPosition);
     
     doc.save(`GrabAndGo_Order_${cusIndex}_${Date.now()}.pdf`);
+
+    // 2. WhatsApp Order Message Formatting
+    let waMessage = `*Grab and Go - New Order* 🛒\n\n`;
+    waMessage += `*Delivery Details:*\n`;
+    waMessage += `Name: ${cusName}\n`;
+    waMessage += `Index: ${cusIndex}\n`;
+    waMessage += `Phone: ${cusPhone}\n`;
+    waMessage += `Hostel: ${cusHostel}\n\n`;
+    waMessage += `*Order Items:*\n`;
     
-    showToast("Order confirmed! Receipt downloaded successfully.", "success");
+    cart.forEach((item, index) => {
+        waMessage += `${index + 1}. ${item.name} - Rs. ${item.price}\n`;
+    });
     
+    waMessage += `\n*Total Amount: Rs. ${total}*`;
+
+    const encodedMessage = encodeURIComponent(waMessage);
+    
+    // ඔබ ලබාදුන් WhatsApp ලින්ක් එක
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94761727294&text=${encodedMessage}&type=phone_number&app_absent=0`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    showToast("Order confirmed! PDF downloaded and WhatsApp opened.", "success");
+    
+    // Clear Cart after Checkout
     cart = [];
     total = 0;
     saveCart();
