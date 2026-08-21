@@ -309,7 +309,7 @@ function checkoutAndPrintPDF() {
     const encodedMessage = encodeURIComponent(waMessage);
     
     // ඔබ ලබාදුන් WhatsApp ලින්ක් එක
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94761727294&text=${encodedMessage}&type=phone_number&app_absent=0`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94761727294&text=${encodedMessage}&type=phone_number&app_absent=0`; 
     
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
