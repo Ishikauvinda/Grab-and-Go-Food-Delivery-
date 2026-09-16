@@ -309,7 +309,7 @@ function checkoutAndPrintPDF() {
     const encodedMessage = encodeURIComponent(waMessage);
     
     // ඔබ ලබාදුන් WhatsApp ලින්ක් එක
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94761727294&text=${encodedMessage}&type=phone_number&app_absent=0`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94706741830&text=${encodedMessage}&type=phone_number&app_absent=0`;
     
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
@@ -390,7 +390,7 @@ function submitFeedback() {
 
     const message = `*Grab and Go - Feedback Report*\n\nDate: ${date}\nTime: ${time}\nMeal: ${meal}\nRating: ${rating}/5\nComments: ${comment}`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94761727294&text=${encodedMessage}&type=phone_number&app_absent=0`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=94706741830&text=${encodedMessage}&type=phone_number&app_absent=0`;
     
     window.open(whatsappUrl, '_blank');
 
